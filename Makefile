@@ -110,6 +110,9 @@ $(BUILD_DIR)/linux-amd64/crc: $(SOURCES)
 $(BUILD_DIR)/linux-arm64/crc: $(SOURCES)
 	GOOS=linux GOARCH=arm64 go build -tags "$(BUILDTAGS)" -ldflags="$(LDFLAGS)" -o $@ $(GO_EXTRA_BUILDFLAGS) ./cmd/crc
 
+$(BUILD_DIR)/linux-s390x/crc: $(SOURCES)
+	GOOS=linux GOARCH=s390x go build -tags "$(BUILDTAGS)" -ldflags="$(LDFLAGS)" -o $@ $(GO_EXTRA_BUILDFLAGS) ./cmd/crc
+
 $(BUILD_DIR)/windows-amd64/crc.exe: $(SOURCES)
 	GOARCH=amd64 GOOS=windows go build -tags "$(BUILDTAGS)" -ldflags="$(LDFLAGS)" -o $@ $(GO_EXTRA_BUILDFLAGS) ./cmd/crc
 
