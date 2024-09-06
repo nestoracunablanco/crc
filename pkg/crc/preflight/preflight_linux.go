@@ -21,15 +21,6 @@ import (
 func libvirtPreflightChecks(distro *linux.OsRelease) []Check {
 	checks := []Check{
 		{
-			configKeySuffix:  "check-virt-enabled",
-			checkDescription: "Checking if Virtualization is enabled",
-			check:            checkVirtualizationEnabled,
-			fixDescription:   "Setting up virtualization",
-			fix:              fixVirtualizationEnabled,
-
-			labels: labels{Os: Linux},
-		},
-		{
 			configKeySuffix:  "check-kvm-enabled",
 			checkDescription: "Checking if KVM is enabled",
 			check:            checkKvmEnabled,
