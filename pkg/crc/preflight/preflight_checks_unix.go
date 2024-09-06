@@ -45,15 +45,6 @@ func genericPreflightChecks(_ crcpreset.Preset) []Check {
 			labels: None,
 		},
 		{
-			configKeySuffix:  "check-supported-cpu-arch",
-			checkDescription: "Checking if running on a supported CPU architecture",
-			check:            checkSupportedCPUArch,
-			fixDescription:   "CRC is only supported on AMD64/Intel64 hardware",
-			flags:            NoFix,
-
-			labels: None,
-		},
-		{
 			configKeySuffix:    "check-crc-symlink",
 			checkDescription:   "Checking if crc executable symlink exists",
 			check:              checkCrcSymlink,
